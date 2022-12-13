@@ -10,22 +10,41 @@ tags: [linux, ssh, firewalld, semanage]
 
 On Linux systems, the default SSH port is 22. There are a few reasons
 why you might want to change this number. This article will walk you
-through the process of changing the default ssh port step by step.
+through the process of changing the default ssh port 22 to 8080.
 
 <!--truncate-->
 
+## Prerequisite
+- If you are using oracle cloud, open port 8080 in Oracle Cloud Security list for SSH Access.
+
 ## Setup VM Firewall
+
+Check firewall state
 ```bash
 sudo firewall-cmd --state
+```
+
+Login as root user
+```bash
 sudo su root
 ```
 
 Update Port 22 to 8080
-
 ```bash
 vi /usr/lib/firewalld/services/ssh.xml
 ```
 
+```output title='~/usr/lib/firewalld/services/ssh.xml'
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>SSH</short>
+  <description>Secure Shell (SSH) is a protocol ... to be useful.</description>
+  <!-- highlight-next-line -->
+  <port protocol="tcp" port="53"/>
+</service>
+```
+
+Reload firewall and network
 ```bash
 cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/ssh.xml
 firewall-cmd --reload
@@ -33,27 +52,44 @@ systemctl restart network
 systemctl reload firewalld
 ```
 
-## Setup SSH Config
+## SSH Configuration
 
+Set port 8080 as ssh port
 ```bash
 semanage port -m -t ssh_port_t -p tcp 8080
 ```
 
+Update ssh port 22 to 8080
 ```bash
 vi /etc/ssh/sshd_config
 ```
 
-:::info Update following values
+```output title='~/etc/ssh/sshd_config'
+...
+# If you want to change the port on a SELinux system, you have to tell
+# SELinux about this change.
+# semanage port -a -t ssh_port_t -p tcp #PORTNUMBER
+# highlight-next-line
+Port 53
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
 
-Port 8080
+HostKey /etc/ssh/ssh_host_rsa_key
+...
+```
 
-:::
-
+Restart ssh daemon
 ```bash
 systemctl restart sshd
 ```
 
+## Testing
 
+Open another terminal and try to ssh through new port
+```bash
+ssh -i "PATH_TO_SSH_KEY" -p 8080 USERNAME@IP_ADDRESS -p 8080
+```
 
 ## References
 - [How to set up a firewall using firewalld on centos 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
