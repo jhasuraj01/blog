@@ -4,7 +4,7 @@
       "id": "change-ssh-port-in-linux-centos",
       "metadata": {
         "permalink": "/blog/change-ssh-port-in-linux-centos",
-        "editUrl": "https://github.com/jhasuraj01/blog/tree/main/blog/blog/2022-12-08-change-ssh-port-in-linux-centos.mdx",
+        "editUrl": "https://github.com/jhasuraj01/blog/tree/main/blog/2022-12-08-change-ssh-port-in-linux-centos.mdx",
         "source": "@site/blog/2022-12-08-change-ssh-port-in-linux-centos.mdx",
         "title": "Change SSH Port in Linux CentOS (Oracle Linux 8)",
         "description": "On Linux systems, the default SSH port is 22. There are a few reasons",

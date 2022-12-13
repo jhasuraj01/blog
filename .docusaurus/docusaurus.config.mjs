@@ -29,7 +29,7 @@ export default {
         "blog": {
           "showReadingTime": true,
           "routeBasePath": "/",
-          "editUrl": "https://github.com/jhasuraj01/blog/tree/main/blog/"
+          "editUrl": "https://github.com/jhasuraj01/blog/tree/main/"
         },
         "theme": {
           "customCss": "/workspaces/blog/src/css/custom.css"
