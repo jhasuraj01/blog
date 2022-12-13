@@ -1,0 +1,333 @@
+---
+slug: ethereum-blockchain-local-environment
+title: Ethereum Blockchain local environment setup using Ganache and truffle
+authors:
+  - jhasuraj01
+tags: [ethereum, blockchain, smart-contract, dapp, ganache, truffle, solidity]
+---
+
+# Blockchain local environment setup using Ganache and truffle
+
+Setting up your dev environment for Ethereum development takes just a few minutes. In this article you will learn about Deploying and Operating Simple Smart Contract on local blockchain network using Ganache and truffle.
+
+<!-- truncate -->
+
+Prerequisites
+-------------
+1.  Download and install the latest `node` and `npm` from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+2.  Download and install Visual Studio Code from [https://code.visualstudio.com/](https://code.visualstudio.com/)
+3.  Download and install `Ganache` from [https://trufflesuite.com/ganache/](https://trufflesuite.com/ganache/)
+4.  Install `Truffle`
+  ```bash
+  npm install truffle -g
+  ```
+
+  
+
+Initialize Project
+------------------
+
+```bash
+truffle init my-bank
+```
+
+Output:
+```output
+Starting init...
+================
+
+> Copying project files to my-bank
+
+Init successful, sweet!
+
+Try our scaffold commands to get started:
+  $ truffle create contract YourContractName # scaffold a contract
+  $ truffle create test YourTestName         # scaffold a test
+
+http://trufflesuite.com/docs/
+```
+
+  
+
+Uncomment the following lines in `truffle-config.js` and update the `host`, `port` and `network_id` as given below.
+
+  
+
+```js title='truffle-config.js'
+...
+// tab if you use this network and you must also set the `host`, `port` and `network_id`
+// options below to some value.
+//
+// highlight-start
+development: {
+  host: "127.0.0.1",     // Localhost (default: none)
+  port: 8545,            // Standard Ethereum port (default: none)
+  network_id: "*",       // Any network (default: none)
+},
+// highlight-end
+//
+// An additional network, but with some advanced options…
+...
+```
+
+  
+
+Writing Smart Contract
+----------------------
+
+  
+
+Create two new files `Bank.sol` and `1_bank.js` in the `contracts` and `migrations` directory respectively as shown below.
+
+  
+
+```output
+├─build
+│ └─contracts
+├─contracts
+│ └─ Bank.sol (+)
+├─migrations
+│ └─ 1_bank.js (+)
+└─test
+```
+
+```sol title='contracts/Bank.sol'
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+contract Bank {
+
+    uint256 balance;
+
+    constructor() {
+        balance = 0;
+    }
+
+    /**
+     * @dev Add value in variable
+     * @param amount value to deposit
+     */
+    function deposit(uint256 amount) public {
+        if(amount > 0)
+            balance += amount;
+    }
+
+    function withdraw(uint256 amount) public {
+        if(amount > 0)
+            balance -= amount;
+    }
+
+    /**
+     * @dev Return balance 
+     * @return value of 'number'
+     */
+    function check_balance() public view returns (uint256){
+        return balance;
+    }
+}
+```
+
+
+```js title='migrations/1_bank.js'
+const Bank = artifacts.require("Bank");
+
+module.exports = (deployer) => {
+    deployer.deploy(Bank);
+}
+```
+
+
+Ganache Setup
+-------------
+
+1.  Launch Ganache and Create a new _ETHEREUM WORKSPACE._![](https://t43259681.p.clickup-attachments.com/t43259681/2cf5b19b-4516-469d-83ec-bb40dbe94fac/image.png)
+2.  Rename your Workspace to `My Bank` and click on _Add Project_![](https://t43259681.p.clickup-attachments.com/t43259681/1ebbf941-0910-409e-9f83-8d30e6bcc2a9/image.png)
+3.  Navigate to your project folder and select `truffle-config.js` and click _Open_ ![](https://t43259681.p.clickup-attachments.com/t43259681/c91edbb3-4bf6-42a1-8cee-e7195d9e2c98/image.png)
+4.  Click on _Server,_ update the port to `8545` then click on _Save Workspace._![](https://t43259681.p.clickup-attachments.com/t43259681/5724c603-6bea-470b-bca8-2396f34c172b/image.png)
+
+  
+
+Compiling and Deploying
+-----------------------
+
+  
+
+Open Terminal and `cd` to your project directory![](https://t43259681.p.clickup-attachments.com/t43259681/23a3f7c5-e87c-4d7a-b0ee-ce3cb6ccfca2/image.png)
+
+  
+
+```bash
+npx truffle migrate
+```
+
+  
+
+Output:
+
+```output
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Bank.sol
+> Artifacts written to E:\Personal Projects\blockchain\my-bank\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.17+commit.8df45f5f.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_bank.js
+=========
+
+   Deploying 'Bank'
+   ----------------
+   > transaction hash:    0xaa6f43b40c85d646c475e940fe1869fb37876620c726c394a25b6962e28eca9b
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x5724576138328Ebe1A163b4c756038Fe6C0698E4
+   > block number:        1
+   > block timestamp:     1664260108
+   > account:             0x7b17D239FA8d011FF19fC20efE4aD2E5541839b7
+   > balance:             99.9963793
+   > gas used:            181035 (0x2c32b)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0036207 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0036207 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.0036207 ETH
+```
+
+
+Wow! You have just deployed your first smart contract! To verify go to Ganache, navigate to _Contracts_ there you will find your first contract `Bank`![](https://t43259681.p.clickup-attachments.com/t43259681/bc7da2eb-c66c-446f-91fd-4cf08245dbe9/image.png)
+
+
+
+Accessing Deployed Smart Contract
+---------------------------------
+
+
+### Enter _truffle console_
+
+  
+
+```bash
+npx truffle console
+```
+
+  
+
+Output:
+
+  
+
+```output
+truffle(development)>
+```
+
+  
+
+### Check the current balance
+
+  
+
+To call the `check_balance()` function in the smart contract, write the following code in the truffle console.
+
+  
+
+```js title='truffle(development)>'
+Bank.deployed().then(function(instance){ return instance.check_balance() })
+```
+
+
+Output:
+
+```output
+BN { negative: 0, words: [ 0, <1 empty item> ], length: 1, red: null }
+```
+  
+
+### Deposit the amount
+
+To call the `deposit()` function in the smart contract, write the following code in the truffle console.
+
+```js title='truffle(development)>'
+Bank.deployed().then(function(instance){ return instance.deposit(100) })
+```
+
+Output:
+
+```output
+{
+  tx: '0xfb2f8b4caa8cdb656237dcb7d5793e75d73988d6942e6b8df243408f0fae4e56',
+  receipt: {
+    transactionHash: '0xfb2f8b4caa8cdb656237dcb7d5793e75d73988d6942e6b8df243408f0fae4e56',
+    transactionIndex: 0,
+    blockHash: '0xc02d65d946cdde8e3a13f0660af0c109becffefc030dff27f2bf379387f6c9c1',
+    blockNumber: 3,
+    from: '0x7b17d239fa8d011ff19fc20efe4ad2e5541839b7',
+    to: '0x5724576138328ebe1a163b4c756038fe6c0698e4',
+    gasUsed: 27673,
+    cumulativeGasUsed: 27673,
+    contractAddress: null,
+    logs: [],
+    status: true,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    rawLogs: []
+  },
+  logs: []
+}
+```
+
+  
+
+### Withdraw the amount
+
+To call the `withdraw()` function in the smart contract, write the following code in the truffle console.
+
+
+```js title='truffle(development)>'
+Bank.deployed().then(function(instance){ return instance.withdraw(20) })
+```
+
+  
+Output:
+
+```output
+{
+  tx: '0xfbd8c0374ed5f6b800feabb24d9c0d921544f270deb83822be3537c3b3059782',
+  receipt: {
+    transactionHash: '0xfbd8c0374ed5f6b800feabb24d9c0d921544f270deb83822be3537c3b3059782',
+    transactionIndex: 0,
+    blockHash: '0x3e729c7336d7ad36048191cd08006163be53acd58d49f6aafbe57b1bef0b2ffb',
+    blockNumber: 4,
+    from: '0x7b17d239fa8d011ff19fc20efe4ad2e5541839b7',
+    to: '0x5724576138328ebe1a163b4c756038fe6c0698e4',
+    gasUsed: 27629,
+    cumulativeGasUsed: 27629,
+    contractAddress: null,
+    logs: [],
+    status: true,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    rawLogs: []
+  },
+  logs: []
+}
+```
+
+  
+
+### Verify all the transactions in Ganache
+
+1.  Check the number of Blocks Created in the _BLOCKS_ Section of Ganache
+2.  Verify all the transactions performed by you in the _TRANSACTIONS_ Section of Ganache.
+3.  Check the ETH balance of your temporary account in the _ACCOUNTS_ Section of Ganache.

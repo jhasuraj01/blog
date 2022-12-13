@@ -18,5 +18,40 @@
     "label": "semanage",
     "permalink": "/blog/tags/semanage",
     "count": 1
+  },
+  {
+    "label": "ethereum",
+    "permalink": "/blog/tags/ethereum",
+    "count": 1
+  },
+  {
+    "label": "blockchain",
+    "permalink": "/blog/tags/blockchain",
+    "count": 1
+  },
+  {
+    "label": "smart-contract",
+    "permalink": "/blog/tags/smart-contract",
+    "count": 1
+  },
+  {
+    "label": "dapp",
+    "permalink": "/blog/tags/dapp",
+    "count": 1
+  },
+  {
+    "label": "ganache",
+    "permalink": "/blog/tags/ganache",
+    "count": 1
+  },
+  {
+    "label": "truffle",
+    "permalink": "/blog/tags/truffle",
+    "count": 1
+  },
+  {
+    "label": "solidity",
+    "permalink": "/blog/tags/solidity",
+    "count": 1
   }
 ]

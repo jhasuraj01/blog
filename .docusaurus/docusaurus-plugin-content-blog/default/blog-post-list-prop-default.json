@@ -4,6 +4,10 @@
     {
       "title": "Change SSH Port in Linux CentOS (Oracle Linux 8)",
       "permalink": "/blog/change-ssh-port-in-linux-centos"
+    },
+    {
+      "title": "Ethereum Blockchain local environment setup using Ganache and truffle",
+      "permalink": "/blog/ethereum-blockchain-local-environment"
     }
   ]
 }

@@ -47,5 +47,9 @@
       "firewalld",
       "semanage"
     ]
+  },
+  "nextItem": {
+    "title": "Ethereum Blockchain local environment setup using Ganache and truffle",
+    "permalink": "/blog/ethereum-blockchain-local-environment"
   }
 }

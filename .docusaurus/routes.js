@@ -48,6 +48,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/ethereum-blockchain-local-environment',
+    component: ComponentCreator('/blog/ethereum-blockchain-local-environment', '6e5'),
+    exact: true
+  },
+  {
     path: '/blog/index-dsjfs',
     component: ComponentCreator('/blog/index-dsjfs', 'db6'),
     exact: true
@@ -63,8 +68,28 @@ export default [
     exact: true
   },
   {
+    path: '/blog/tags/blockchain',
+    component: ComponentCreator('/blog/tags/blockchain', '442'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/dapp',
+    component: ComponentCreator('/blog/tags/dapp', '7ef'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/ethereum',
+    component: ComponentCreator('/blog/tags/ethereum', '6f4'),
+    exact: true
+  },
+  {
     path: '/blog/tags/firewalld',
     component: ComponentCreator('/blog/tags/firewalld', '0f6'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/ganache',
+    component: ComponentCreator('/blog/tags/ganache', 'e91'),
     exact: true
   },
   {
@@ -78,8 +103,23 @@ export default [
     exact: true
   },
   {
+    path: '/blog/tags/smart-contract',
+    component: ComponentCreator('/blog/tags/smart-contract', 'aaf'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/solidity',
+    component: ComponentCreator('/blog/tags/solidity', '2c6'),
+    exact: true
+  },
+  {
     path: '/blog/tags/ssh',
     component: ComponentCreator('/blog/tags/ssh', '0f5'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/truffle',
+    component: ComponentCreator('/blog/tags/truffle', '030'),
     exact: true
   },
   {
@@ -156,7 +196,7 @@ export default [
   },
   {
     path: '/blog/',
-    component: ComponentCreator('/blog/', '6eb'),
+    component: ComponentCreator('/blog/', '546'),
     exact: true
   },
   {
