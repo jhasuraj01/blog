@@ -1,0 +1,62 @@
+---
+slug: change-ssh-port-in-linux-centos
+title: Change SSH Port in Linux CentOS (Oracle Linux 8)
+authors:
+  - jhasuraj01
+tags: [linux, ssh, firewalld, semanage]
+---
+
+# Change SSH Port in CentOS (Oracle Linux 8)
+
+On Linux systems, the default SSH port is 22. There are a few reasons
+why you might want to change this number. This article will walk you
+through the process of changing the default ssh port step by step.
+
+<!--truncate-->
+
+## Setup VM Firewall
+```bash
+sudo firewall-cmd --state
+sudo su root
+```
+
+Update Port 22 to 8080
+
+```bash
+vi /usr/lib/firewalld/services/ssh.xml
+```
+
+```bash
+cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/ssh.xml
+firewall-cmd --reload
+systemctl restart network
+systemctl reload firewalld
+```
+
+## Setup SSH Config
+
+```bash
+semanage port -m -t ssh_port_t -p tcp 8080
+```
+
+```bash
+vi /etc/ssh/sshd_config
+```
+
+:::info Update following values
+
+Port 8080
+
+:::
+
+```bash
+systemctl restart sshd
+```
+
+
+
+## References
+- [How to set up a firewall using firewalld on centos 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+- [Changing the default ssh port](https://www.ionos.com/help/server-cloud-infrastructure/getting-started/important-security-information-for-your-server/changing-the-default-ssh-port/)
+- [SSH fails after port change on centos 7](https://serverfault.com/questions/834195/ssh-fails-after-port-change-on-centos-7)
+- [Selinux error valueerror port tcp 5000 already defined](https://serverfault.com/questions/790404/selinux-error-valueerror-port-tcp-5000-already-defined)

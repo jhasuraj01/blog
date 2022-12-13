@@ -4,15 +4,16 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "My Site",
+  "title": "Suraj Jha Blogs",
   "tagline": "Dinosaurs are cool",
-  "url": "https://your-docusaurus-test-site.com",
-  "baseUrl": "/",
+  "url": "https://jhasuraj.com",
+  "baseUrl": "/blog/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
-  "favicon": "img/favicon.ico",
-  "organizationName": "facebook",
-  "projectName": "docusaurus",
+  "favicon": "icons/icon32.png",
+  "organizationName": "jhasuraj01",
+  "projectName": "blog",
+  "trailingSlash": false,
   "i18n": {
     "defaultLocale": "en",
     "locales": [
@@ -25,13 +26,10 @@ export default {
     [
       "classic",
       {
-        "docs": {
-          "sidebarPath": "/workspaces/blog/sidebars.js",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
-        },
         "blog": {
           "showReadingTime": true,
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "routeBasePath": "/",
+          "editUrl": "https://github.com/jhasuraj01/blog/tree/main/blog/"
         },
         "theme": {
           "customCss": "/workspaces/blog/src/css/custom.css"
@@ -41,26 +39,25 @@ export default {
   ],
   "themeConfig": {
     "navbar": {
-      "title": "My Site",
+      "title": "Suraj Jha Blogs",
       "logo": {
         "alt": "My Site Logo",
-        "src": "img/logo.svg"
+        "src": "https://jhasuraj.com/icons/icon48.png"
       },
       "items": [
         {
-          "type": "doc",
-          "docId": "intro",
-          "position": "left",
-          "label": "Tutorial"
-        },
-        {
-          "to": "/blog",
-          "label": "Blog",
-          "position": "left"
-        },
-        {
-          "href": "https://github.com/facebook/docusaurus",
+          "href": "https://github.jhasuraj.com/",
           "label": "GitHub",
+          "position": "right"
+        },
+        {
+          "href": "https://linkedin.jhasuraj.com/",
+          "label": "LinkedIn",
+          "position": "right"
+        },
+        {
+          "href": "https://jhasuraj.com/",
+          "label": "Website",
           "position": "right"
         }
       ],
@@ -70,28 +67,36 @@ export default {
       "style": "dark",
       "links": [
         {
-          "title": "Docs",
+          "title": "Coding Profiles",
           "items": [
             {
-              "label": "Tutorial",
-              "to": "/docs/intro"
+              "label": "LeetCode",
+              "href": "https://leetcode.jhasuraj.com"
+            },
+            {
+              "label": "CodeChef",
+              "href": "https://codechef.jhasuraj.com"
+            },
+            {
+              "label": "Codeforces",
+              "href": "https://codeforces.jhasuraj.com"
             }
           ]
         },
         {
-          "title": "Community",
+          "title": "Connect",
           "items": [
             {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
+              "label": "LinkedIn",
+              "href": "https://linkedin.jhasuraj.com"
             },
             {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
+              "label": "GitHub",
+              "href": "https://github.jhasuraj.com"
             },
             {
               "label": "Twitter",
-              "href": "https://twitter.com/docusaurus"
+              "href": "https://twitter.jhasuraj.com"
             }
           ]
         },
@@ -99,17 +104,17 @@ export default {
           "title": "More",
           "items": [
             {
-              "label": "Blog",
-              "to": "/blog"
+              "label": "Projects",
+              "href": "https://jhasuraj.com/projects"
             },
             {
-              "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
+              "label": "Figma",
+              "href": "https://figma.jhasuraj.com"
             }
           ]
         }
       ],
-      "copyright": "Copyright © 2022 My Project, Inc. Built with Docusaurus."
+      "copyright": "Copyright © 2022 - 2023 Suraj Jha. All Right Reserved."
     },
     "prism": {
       "theme": {
