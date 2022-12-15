@@ -28,18 +28,22 @@ const config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        // docs: {
-        //   sidebarPath: require.resolve('./sidebars.js'),
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        // },
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/jhasuraj01/blog/tree/main/',
+          routeBasePath: '/'
+        },
         blog: {
           showReadingTime: true,
           routeBasePath: '/',
@@ -65,12 +69,18 @@ const config = {
           src: 'https://jhasuraj.com/icons/icon48.png',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
+          {
+            type: 'doc',
+            docId: 'algorithms/intro',
+            position: 'left',
+            label: 'Algorithms',
+          },
+          {
+            type: 'doc',
+            docId: 'data-structures/intro',
+            position: 'left',
+            label: 'Data Structures',
+          },
           {
             href: 'https://github.jhasuraj.com/',
             label: 'GitHub',
