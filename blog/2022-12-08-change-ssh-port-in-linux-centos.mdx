@@ -40,7 +40,7 @@ vi /usr/lib/firewalld/services/ssh.xml
   <short>SSH</short>
   <description>Secure Shell (SSH) is a protocol ... to be useful.</description>
   <!-- highlight-next-line -->
-  <port protocol="tcp" port="53"/>
+  <port protocol="tcp" port="8080"/>
 </service>
 ```
 
@@ -70,7 +70,7 @@ vi /etc/ssh/sshd_config
 # SELinux about this change.
 # semanage port -a -t ssh_port_t -p tcp #PORTNUMBER
 # highlight-next-line
-Port 53
+Port 8080
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
