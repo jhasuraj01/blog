@@ -82,7 +82,7 @@ const config = {
             label: 'Data Structures',
           },
           {
-            href: 'https://github.jhasuraj.com/',
+            href: 'https://github.jhasuraj.com/blog/',
             label: 'GitHub',
             position: 'right',
           },
