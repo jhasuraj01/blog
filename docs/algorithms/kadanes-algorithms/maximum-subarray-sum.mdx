@@ -1,0 +1,21 @@
+---
+title: Maximum Subarray Sum
+displayed_sidebar: algorithms
+---
+
+# Maximum Subarray Sum - Kadane's Algorithm
+
+```cpp title='C++ Solution'
+#include <bits/stdc++.h> 
+long long maxSubarraySum(int arr[], int n) {
+    long long maxSum = 0;
+    long long curMax = 0;
+    
+    for(int i = 0; i < n; ++i) {
+        cur = max(cur + arr[i], (long long) arr[i]);
+        ans = max(ans, cur);
+    }
+    
+    return ans;
+}
+```
