@@ -15,7 +15,7 @@ keywords:
 
 ```cpp title='Tree: Adjacency List'
 
-void dfs(int curr_node, int parent, vector<vector<int>> tree) {
+void dfs(int curr_node, int parent, vector<vector<int>> &tree) {
 
     // loop all child of child_node
     for(int child: tree[curr_node]) {
