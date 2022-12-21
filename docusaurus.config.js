@@ -42,7 +42,9 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/jhasuraj01/blog/tree/main/',
-          routeBasePath: '/'
+          routeBasePath: '/',
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
