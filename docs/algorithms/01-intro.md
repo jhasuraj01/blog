@@ -10,7 +10,7 @@ The word Algorithm means ”A set of finite rules or instructions to be followed
 There are many important algorithms that are commonly covered in technical interviews. Here is a list of some common algorithms that you might be expected to know:
 
 01. **Sorting algorithms**: algorithms for sorting a list of items, such as `bubble sort`, `insertion sort`, `merge sort`, and `quick sort`.
-02. **Search algorithms**: algorithms for searching a list of items, such as `linear search`, `binary search` and `Ternary search`.
+02. **Search algorithms**: algorithms for searching a list of items, such as `linear search`, `binary search`, and `ternary search`.
 03. **Graph algorithms**: algorithms for working with graphs, such as `Depth-First Search (DFS)`, `Breadth-First Search (BFS)`, and shortest path algorithms (e.g., `Dijkstra's algorithm` and `A*`).
 04. **Tree algorithms**: algorithms for working with trees, such as tree traversal algorithms and algorithms for maintaining binary search trees.
 05. **Dynamic programming**: algorithms for solving problems by breaking them down into smaller subproblems and storing the results to avoid unnecessary recomputation.
