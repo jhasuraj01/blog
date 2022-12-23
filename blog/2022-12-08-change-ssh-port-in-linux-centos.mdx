@@ -6,6 +6,9 @@ authors:
 tags: [linux, ssh, firewalld, semanage]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Change SSH Port in CentOS (Oracle Linux 8)
 
 On Linux systems, the default SSH port is 22. There are a few reasons
@@ -46,7 +49,6 @@ vi /usr/lib/firewalld/services/ssh.xml
 
 Reload firewall and network
 ```bash
-cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/ssh.xml
 firewall-cmd --reload
 systemctl restart network
 systemctl reload firewalld
@@ -58,6 +60,41 @@ Set port 8080 as ssh port
 ```bash
 semanage port -m -t ssh_port_t -p tcp 8080
 ```
+
+<details close>
+
+<summary>Solve the error <code>semanage: command not found</code> and retry above command</summary>
+
+```bash title='Check your linux distribution'
+cat /etc/os-release | grep -E -i 'Fedora|Debian|CentOS'
+```
+
+<Tabs groupId="linux-distro">
+
+<TabItem value="debian" label="Debian" default>
+
+```bash title='Install semanage via apt'
+apt-get install policycoreutils-python-utils
+```
+
+</TabItem>
+<TabItem value="fedora" label="Fedora">
+
+```bash title='Install semanage via dnf'
+dnf install policycoreutils-python-utils
+```
+
+</TabItem>
+<TabItem value="centos" label="CentOS">
+
+```bash title='Install semanage via yum'
+yum install policycoreutils-python
+```
+
+</TabItem>
+</Tabs>
+
+</details>
 
 Update ssh port 22 to 8080
 ```bash
