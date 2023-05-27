@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[3744],{65:e=>{e.exports=JSON.parse('{"label":"Leetcode Daily","permalink":"/blog/tags/leetcode-daily","allTagsPath":"/blog/tags","count":2}')}}]);

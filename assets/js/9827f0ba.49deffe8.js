@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjhasuraj_blog=self.webpackChunkjhasuraj_blog||[]).push([[6128],{7517:a=>{a.exports=JSON.parse('{"label":"dapp","permalink":"/blog/tags/dapp","allTagsPath":"/blog/tags","count":1}')}}]);

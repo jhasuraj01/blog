@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjhasuraj_blog=self.webpackChunkjhasuraj_blog||[]).push([[779],{482:a=>{a.exports=JSON.parse('{"label":"crypto-currency","permalink":"/blog/tags/crypto-currency","allTagsPath":"/blog/tags","count":1}')}}]);

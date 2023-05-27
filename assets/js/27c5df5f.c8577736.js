@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjhasuraj_blog=self.webpackChunkjhasuraj_blog||[]).push([[4119],{9222:a=>{a.exports=JSON.parse('{"label":"firewalld","permalink":"/blog/tags/firewalld","allTagsPath":"/blog/tags","count":1}')}}]);
