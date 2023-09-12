@@ -18,11 +18,11 @@ Prerequisites
 2.  Download and install Visual Studio Code from [https://code.visualstudio.com/](https://code.visualstudio.com/)
 3.  Download and install `Ganache` from [https://trufflesuite.com/ganache/](https://trufflesuite.com/ganache/)
 4.  Install `Truffle`
-  ```bash
+  ```bash npm2yarn
   npm install truffle -g
   ```
 
-  
+
 
 Initialize Project
 ------------------
@@ -47,11 +47,11 @@ Try our scaffold commands to get started:
 http://trufflesuite.com/docs/
 ```
 
-  
+
 
 Uncomment the following lines in `truffle-config.js` and update the `host`, `port` and `network_id` as given below.
 
-  
+
 
 ```js title='truffle-config.js'
 ...
@@ -70,16 +70,16 @@ development: {
 ...
 ```
 
-  
+
 
 Writing Smart Contract
 ----------------------
 
-  
+
 
 Create two new files `Bank.sol` and `1_bank.js` in the `contracts` and `migrations` directory respectively as shown below.
 
-  
+
 
 ```output
 ├─build
@@ -118,7 +118,7 @@ contract Bank {
     }
 
     /**
-     * @dev Return balance 
+     * @dev Return balance
      * @return value of 'number'
      */
     function check_balance() public view returns (uint256){
@@ -145,22 +145,22 @@ Ganache Setup
 3.  Navigate to your project folder and select `truffle-config.js` and click _Open_ ![](https://t43259681.p.clickup-attachments.com/t43259681/c91edbb3-4bf6-42a1-8cee-e7195d9e2c98/image.png)
 4.  Click on _Server,_ update the port to `8545` then click on _Save Workspace._![](https://t43259681.p.clickup-attachments.com/t43259681/5724c603-6bea-470b-bca8-2396f34c172b/image.png)
 
-  
+
 
 Compiling and Deploying
 -----------------------
 
-  
+
 
 Open Terminal and `cd` to your project directory![](https://t43259681.p.clickup-attachments.com/t43259681/23a3f7c5-e87c-4d7a-b0ee-ce3cb6ccfca2/image.png)
 
-  
 
-```bash
+
+```bash npm2yarn
 npx truffle migrate
 ```
 
-  
+
 
 Output:
 
@@ -218,31 +218,31 @@ Accessing Deployed Smart Contract
 
 ### Enter _truffle console_
 
-  
 
-```bash
+
+```bash npm2yarn
 npx truffle console
 ```
 
-  
+
 
 Output:
 
-  
+
 
 ```output
 truffle(development)>
 ```
 
-  
+
 
 ### Check the current balance
 
-  
+
 
 To call the `check_balance()` function in the smart contract, write the following code in the truffle console.
 
-  
+
 
 ```js title='truffle(development)>'
 Bank.deployed().then(function(instance){ return instance.check_balance() })
@@ -254,7 +254,7 @@ Output:
 ```output
 BN { negative: 0, words: [ 0, <1 empty item> ], length: 1, red: null }
 ```
-  
+
 
 ### Deposit the amount
 
@@ -288,7 +288,7 @@ Output:
 }
 ```
 
-  
+
 
 ### Withdraw the amount
 
@@ -299,7 +299,7 @@ To call the `withdraw()` function in the smart contract, write the following cod
 Bank.deployed().then(function(instance){ return instance.withdraw(20) })
 ```
 
-  
+
 Output:
 
 ```output
@@ -324,7 +324,7 @@ Output:
 }
 ```
 
-  
+
 
 ### Verify all the transactions in Ganache
 
