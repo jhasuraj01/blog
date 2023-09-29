@@ -1,0 +1,35 @@
+---
+slug: hyperledger-fabric-getting-started
+title: Hyperledger Fabric Getting Started
+authors:
+  - jhasuraj01
+tags: [hyperledger, fabric, blockchain, chaincode, dapp, java]
+---
+
+# Hyperledger Fabric Getting Started
+
+Hyperledger Fabric is a private, permissioned, and enterprise blockchain framework.
+It has a modular architecture which helps in maximizing the confidentiality,
+resilience, and flexibility of blockchain solutions. It creates separate
+chains (ledgers) within the Fabric network using channels.
+
+<!--truncate-->
+
+## Membership Service Provider (MSP)
+
+- MSP is needed to access fabric network.
+
+## Flow
+
+Execute -> Order(Sequencing) -> Validate & commit
+
+## How Hyperledger Works?
+- The organizations that take part in building the Hyperledger Fabric network are called members.
+- Each member organization in the network is responsible for setting up their peers to be a part of the network.
+- These peers need to be configured with appropriate cryptographic materials (using MSP).
+- Peers in an organization receive transaction invocation requests from the client inside the organization (connected by SDK).
+- Chaincode installed in peers initiates transaction invocation requests.
+- All the peers maintain their own ledger per channel.
+
+## Note
+- P2P Communication protocol (gRPC)
