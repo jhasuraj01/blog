@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjhasuraj_blog=self.webpackChunkjhasuraj_blog||[]).push([[6140],{6284:a=>{a.exports=JSON.parse('{"label":"faang","permalink":"/blog/tags/faang","allTagsPath":"/blog/tags","count":1}')}}]);
