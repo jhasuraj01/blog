@@ -102,7 +102,7 @@ const config = {
             label: 'Data Structures',
           },
           {
-            href: 'https://github.jhasuraj.com/blog/',
+            href: 'https://github.jhasuraj.com/',
             label: 'GitHub',
             position: 'right',
           },
@@ -130,33 +130,29 @@ const config = {
           //     },
           //   ],
           // },
-          {
-            title: 'Coding Profiles',
-            items: [
-              {
-                label: 'LeetCode',
-                href: 'https://leetcode.jhasuraj.com',
-              },
-              {
-                label: 'CodeChef',
-                href: 'https://codechef.jhasuraj.com',
-              },
-              {
-                label: 'Codeforces',
-                href: 'https://codeforces.jhasuraj.com',
-              },
-            ],
-          },
+          // {
+          //   title: 'Coding Profiles',
+          //   items: [
+          //     {
+          //       label: 'LeetCode',
+          //       href: 'https://leetcode.jhasuraj.com',
+          //     },
+          //     {
+          //       label: 'CodeChef',
+          //       href: 'https://codechef.jhasuraj.com',
+          //     },
+          //     {
+          //       label: 'Codeforces',
+          //       href: 'https://codeforces.jhasuraj.com',
+          //     },
+          //   ],
+          // },
           {
             title: 'Connect',
             items: [
               {
                 label: 'LinkedIn',
                 href: 'https://linkedin.jhasuraj.com',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.jhasuraj.com',
               },
               {
                 label: 'Twitter',
@@ -172,9 +168,9 @@ const config = {
                 href: 'https://jhasuraj.com/projects',
               },
               {
-                label: 'Figma',
-                href: 'https://figma.jhasuraj.com',
-              }
+                label: 'GitHub',
+                href: 'https://github.jhasuraj.com',
+              },
             ],
           },
         ],
